@@ -169,9 +169,16 @@ primaryGenre;
 secondaryGenre;
 otherGenres;
 
-const newGenres = [...genres, "epic fantasy"];
-// const newGenres = ["epic fantasy", ...genres];
+const newGenres = [...genres, "epic fantasy"]; // creates the new genre at the end of the existing genres
+// const newGenres = ["epic fantasy", ...genres]; //creates the new genre at the begining of the existing genres
 newGenres;
 
-const updatedBook = {...book, moviePublicationDate: "2001-12-19", pages: 1510};
+const updatedBook = {
+    ...book, 
+    moviePublicationDate: "2001-12-19", // creating a new property
+    pages: 1510 //updating an existing property
+};
 updatedBook;
+
+const summary = `${title} is a nice book with ${pages} pages published in ${publicationDate.split("-")[0]} by ${author}`;
+summary;
