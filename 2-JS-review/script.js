@@ -145,13 +145,13 @@ function getBook(id) {
 
 // destructuring
 
-const book = getBook(1);
+const book = getBook(2);
 book;
 
 // const title = book.title;
 // const author = book.author;
 
-const {title, author, pages, genres, publicationDate, hasMovieAdaptation} = book;
+const { title, author, pages, genres, publicationDate, hasMovieAdaptation } = book;
 
 title;
 author;
@@ -169,16 +169,22 @@ primaryGenre;
 secondaryGenre;
 otherGenres;
 
+// rest/spread operator
 const newGenres = [...genres, "epic fantasy"]; // creates the new genre at the end of the existing genres
 // const newGenres = ["epic fantasy", ...genres]; //creates the new genre at the begining of the existing genres
 newGenres;
 
 const updatedBook = {
-    ...book, 
+    ...book,
     moviePublicationDate: "2001-12-19", // creating a new property
     pages: 1510 //updating an existing property
 };
 updatedBook;
 
-const summary = `${title} is a nice book with ${pages} pages published in ${publicationDate.split("-")[0]} by ${author}`;
+// string literals
+const summary = `${title} is a nice book with ${pages} pages published in ${publicationDate.split("-")[0]} by ${author}. The Book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie`;
 summary;
+
+// ternary operators
+const pagesRange = pages > 1000 ? "over a thousand pages" : "less than 1000 pages";
+console.log(`The book has ${pages} pages which is ${pagesRange}`);
