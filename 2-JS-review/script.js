@@ -181,8 +181,15 @@ const updatedBook = {
 };
 updatedBook;
 
+// function getYear(str) {
+//     return str.split("-")[0];
+// }; // fucntion declaration
+
+const getYear = (str) => str.split("-")[0]; // function expression
+console.log(getYear(publicationDate));
+
 // string literals
-const summary = `${title} is a nice book with ${pages} pages published in ${publicationDate.split("-")[0]} by ${author}. The Book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie`;
+const summary = `${title} is a nice book with ${pages} pages published in ${getYear(publicationDate)} by ${author}. The Book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie`;
 summary;
 
 // ternary operators
